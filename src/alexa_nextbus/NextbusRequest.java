@@ -16,14 +16,25 @@ public class NextbusRequest {
 		String requestUrl = "";
 		String route = "";
 		String stop = "";
+		//String lat = "";
+		String latlongt = "";
+		String latlongreqUrl = "";
+		
 		List<String> time = new ArrayList<String>(); 
 		
-		if(busRoute.equalsIgnoreCase("campus connect"))
+		if(busRoute.equalsIgnoreCase("campus connect")) {
 			route = "connect";
+			//lat = "40.7437891,";
+		}
+			
 		
-		if(busStop.equalsIgnoreCase("washington park"))
+		if(busStop.equalsIgnoreCase("washington park")) {
 			stop = "washpark";
+			latlongt = "40.7437891,-74.170569";
+		}
+			
 		
+		latlongreqUrl = "http://restbus.info/api/locations/".concat(latlongt).concat("/predictions");
 		requestUrl = ("http://webservices.nextbus.com/service/publicJSONFeed?command=predictions&a=rutgers-newark").concat("&r=").concat(route).concat("&s=").concat(stop);
 		
 		if(busRoute.equalsIgnoreCase("test") && busStop.equals("test")) {
@@ -32,7 +43,7 @@ public class NextbusRequest {
 			requestUrl = testUrl;
 		}
 			
-		GetMethod method = new GetMethod(requestUrl);
+		GetMethod method = new GetMethod(latlongreqUrl);
 		
 		method.addRequestHeader("Accept", "application/json");
 		

@@ -1,14 +1,6 @@
 package alexa_nextbus;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import com.amazon.speech.json.SpeechletRequestEnvelope;
+//import com.amazon.speech.json.SpeechletRequestEnvelope;
 import com.amazon.speech.slu.Intent;
 import com.amazon.speech.speechlet.IntentRequest;
 import com.amazon.speech.speechlet.LaunchRequest;
@@ -18,7 +10,6 @@ import com.amazon.speech.speechlet.SessionStartedRequest;
 import com.amazon.speech.speechlet.Speechlet;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
-import com.amazon.speech.speechlet.SpeechletV2;
 
 public class NextbusSpeechlet implements Speechlet {
 
